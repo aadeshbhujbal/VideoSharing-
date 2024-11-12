@@ -19,7 +19,7 @@ type Props = {
   children: React.ReactNode;
 };
 
-const Layout = async ({ params: { workspaceId }, children }: Props) => {
+const Layout = async ({ params: { workspaceId } }: Props) => {
   const auth = await onAuthenticateUser();
   if (!auth.user?.workspace) redirect("/auth/sign-in");
   if (!auth.user?.workspace.length) redirect("/auth/sign-in");
@@ -56,7 +56,7 @@ const Layout = async ({ params: { workspaceId }, children }: Props) => {
   return (
     <HydrationBoundary state={dehydrate(query)}>
       <div className="flex h-screen w-screen">
-        <Sidebar actionWorkspaceId={workspaceId} />
+        <Sidebar activeWorkspaceId={workspaceId} />
       </div>
     </HydrationBoundary>
   );
