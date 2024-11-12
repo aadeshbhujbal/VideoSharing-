@@ -6,6 +6,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme";
 
 import { Toaster } from "sonner";
+import ReactQueryProvider from "@/react-query";
 
 const manrope = Manrope({ subsets: ["latin"] });
 
@@ -28,7 +29,8 @@ export default function RootLayout({
             defaultTheme="dark"
             disableTransitionOnChange
           >
-            {children}
+            <ReactQueryProvider> {children}</ReactQueryProvider>
+
             <Toaster />
           </ThemeProvider>
         </body>

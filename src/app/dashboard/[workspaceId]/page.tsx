@@ -2,9 +2,8 @@ import React from "react";
 
 type Props = {};
 
-function DashboardPage({}: Props) {
-  //if accounts exists then render the dashboard if not
-  return <div>DashboardPage</div>;
-}
+const page = (props: Props) => {
+  return <div>page</div>;
+};
 
-export default DashboardPage;
+export default page;
